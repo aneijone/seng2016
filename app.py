@@ -17,7 +17,7 @@ class FizzBuzz():
 
     # Run from 1 to "end". Maybe. Test fails for some reason
     def run(self, end, out=sys.stdout):
-        for i in range(1, end):
+        for i in range(1, end +1):
             print >> out, self.calc(i)
 
     # Seems to give correct values. Tested with 1 and 2.
