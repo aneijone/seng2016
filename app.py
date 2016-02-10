@@ -18,14 +18,28 @@ class FizzBuzz():
     # Run from 1 to "end". Maybe. Test fails for some reason
     def run(self, end, out=sys.stdout):
         for i in range(1, end +1):
-            if (i % 3 == 0) & (i % 5 == 0):
-                print >> out, "FizzBuzz"
-            elif (i % 3) == 0:
-                print >> out, "Fizz"
-            elif (i % 5) == 0:
-                print >>out, "Buzz"
+            if i == 1:
+                print >>out, self.calc(i)
+            elif i == 2:
+                print >>out, i, "is a prime"
             else:
-                print >>out, i
+                for prim in range (2, i):
+                    if (i % prim == 0):
+                        if (i % 3 == 0) & (i % 5 == 0):
+                            print >> out, "FizzBuzz"
+                            break
+                        elif (i % 3) == 0:
+                            print >> out, "Fizz"
+                            break
+                        elif (i % 5) == 0:
+                            print >>out, "Buzz" 
+                            break
+                        else:
+                            print >> out, self.calc(i)    
+                            break
+                else:
+                    print >>out, i, "is a prime"
+
     # Seems to give correct values. Tested with 1 and 2.
     def calc(self, i):
         return i
